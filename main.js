@@ -15,13 +15,12 @@ function getRange() {
   console.log(randomNumber);
   minDisplay.innerText = minRange.value;
   maxDisplay.innerText = maxRange.value;
-
 }
 
+let nameInput1 = document.querySelector('#challenger-1-name-input');
+let nameInput2 = document.querySelector('#challenger-2-name-input');
 
 function guessHandler() {
-  let nameInput1 = document.querySelector('#challenger-1-name-input');
-  let nameInput2 = document.querySelector('#challenger-2-name-input');
   let name1 = document.querySelector('.challenger-1-input-display');
   let name2 = document.querySelector('.challenger-2-input-display');
   let guess1 = document.querySelector('#challenger-1-guess');
@@ -37,6 +36,7 @@ function guessHandler() {
   updateNumber(guess2, guessDisplay2);
   checkGuesses(guess1, guessMessage1);
   checkGuesses(guess2, guessMessage2);
+
 }
 
 function updateName(input, nameDisplay) {
@@ -54,6 +54,44 @@ function checkGuesses(guess, guessMessage) {
     guessMessage.innerText = 'In the words of Lil Jon, get LOW(wer).'
   } else {
     guessMessage.innerText = 'Nailed it!'
-    showWinnerCard()
+    showWinnerCard(nameInput1, nameInput2);
   }
 }
+
+function showWinnerCard (name1, name2) {
+  let aside = document.querySelector('#right-aside');
+  aside.innerHTML += `
+  <article class="winner-card">
+    <div id="challenger-1-vs-challenger-2-wrapper">
+      <p class="challenger-1-name-input-display bold-score-box-text">
+        ${name1.value}
+      </p>
+      <p class="light-form-text">
+        vs
+      </p>
+      <p class="challenger-2-name-input-display bold-score-box-text">
+        ${name2.value}
+      </p>
+    </div>
+    <div id="winner-name-and-winner">
+      <div class="grey-horizontal-lines"></div>
+      <p class="bold-winner-name">
+        WINNER NAME
+      </p>
+      <p class="winner-card-winner">
+        WINNER
+      </p>
+      <div class="grey-horizontal-lines"></div>
+    </div>
+    <div id="guesses-minutes-button-wrapper">
+      <p class="number-of-guesses-statement">
+        <span class="number-guesses bold-score-box-text">100</span>
+        <span class="light-form-text">GUESSES</span>
+      </p>
+      <p class="number-of-minutes-statement">
+        <span class="number-minutes bold-score-box-text">5</span>
+        <span class="light-form-text">MINUTES</span>
+      </p>
+      <input class="button delete-card" type="button" name="update-button" value="X" />
+    </div>`;
+  };
