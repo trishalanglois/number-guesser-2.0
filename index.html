@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <header>
+      <p class="header-text"><strong>NUMBER</strong>GUESSER</p>
+      <div id="subtext-wrapper">
+        <div class="top-white-lines"></div>
+        <div class="header-subtext"><lighter>ULTIMATE CHALLENGER EDITION<lighter></div>
+        <div class="top-white-lines"></div>
+      </div>
+    </header>
+    <section class = "under-header">
+      <section class="left-side-boxes">
+        <form class="left-side-cards">
+          <h3 class="bold-form-text">Set Range</h3>
+          <span id="min-max-range">
+            <div class="min-max-range-box">
+              <p class="light-form-text">
+                Min Range
+              </p>
+              <input class="input-form-box user-range-num" id="user-min-number" size ="15px" />
+            </div>
+            <div class="min-max-range-box">
+              <p class="light-form-text">
+                  Max Range
+              </p>
+            <input class="input-form-box user-range-num" id="user-max-num"/>
+            </div>
+            <input class="button" id="button-min-max-range-box" type="button" name="update-button" value="UPDATE" />
+          </span>
+          <p class="error-msg" id="range-error-msg">Your Min Range should be lower than your Max Range</p>
+        </form>
+        <form class="left-side-cards">
+          <p class="light-form-text" id="the-current-range-text">The Current Range is <span class="range-numbers form" id="min-number-from-form">1</span> to <span class="range-numbers form" id="max-number-from-form">100</span></span>
+          <h3>Challenger 1</h3>
+          <div class="name-and-guess-wrapper">
+            <div class="name-and-box">
+              <p class="light-form-text name-guess-display">
+                Name
+              </p>
+              <input class="input-form-box challenger-name-input" id="challenger-1-name-input" />
+                <p class="error-msg" id="error-msg-challenger-1-name">Enter a name</p>
+            </div>
+            <div>
+              <p class="light-form-text name-guess-display">
+                Guess
+              </p>
+              <input class="input-form-box guess-box" id="challenger-1-guess"/>
+                <p class="error-msg" id="error-msg-challenger-1-guess">Enter a valid number</p>
+            </div>
+          </div>
+          <h3>Challenger 2</h3>
+          <div class="name-and-guess-wrapper">
+            <div class="name-and-box">
+              <p class="light-form-text name-guess-display">
+                Name
+              </p>
+              <input class="input-form-box challenger-name-input" id="challenger-2-name-input" />
+                <p class="error-msg" id="error-msg-challenger-2-name">Enter a name</p>
+            </div>
+            <div>
+              <p class="light-form-text name-guess-display">
+                Guess
+              </p>
+              <input class="input-form-box guess-box" id="challenger-2-guess" />
+                <p class="error-msg" id="error-msg-challenger-2-guess">Enter a valid number</p>
+            </div>
+          </div>
+          <div id='three-button-wrapper'>
+            <input class="button" id="submit-guess-button" type="button" name="update-button" value="SUBMIT GUESS" />
+            <input class="button disable-button" id="reset-button" type="button" name="update-button" value="RESET GAME" />
+            <input class="button disable-button" id="clear-game-button" type="button" name="update-button" value="CLEAR GAME" disabled />
+          </div>
+        </form>
+        <article class="left-side-cards">
+            <h3>Latest Score</h3>
+            <div id="score-box" >
+              <span class="challenger-guess-boxes">
+                <p class="bold-score-box-text challenger-1-input-display">
+                  Challenger 1 Name
+                </p>
+                <p class="light-form-text">
+                  current guess
+                </p>
+                <p class="big-pink-current-guess" id="challenger-1-number-guess">
+                  --
+                </p>
+                <p class="light-medium-score-box-text" id="challenger-1-message-guess">
+                  high/low msg
+                </p>
+              </span>
+              <div id="grey-vertical-line"></div>
+              <span class="challenger-guess-boxes">
+                <p class="bold-score-box-text challenger-2-input-display">
+                  Challenger 2 Name
+                </p>
+                <p class="light-form-text">
+                  current guess
+                </p>
+                <p class="big-pink-current-guess" id="challenger-2-number-guess">
+                --
+                </p>
+                <p class="light-medium-score-box-text" id="challenger-2-message-guess">
+                  high/low msg
+                </p>
+              </span>
+            </div>
+      </section>
+      <aside id="right-aside">
+      </aside>
+      <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
