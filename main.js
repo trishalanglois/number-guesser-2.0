@@ -15,6 +15,14 @@ function getRange() {
   console.log(randomNumber);
   minDisplay.innerText = minRange.value;
   maxDisplay.innerText = maxRange.value;
+  checkRange(minRange, maxRange);
+}
+
+function checkRange(min, max) {
+  let rangeError = document.querySelector('#range-error-msg');
+  if (max.value < min.value) {
+    rangeError.style.display = 'inline'
+  }
 }
 
 let nameInput1 = document.querySelector('#challenger-1-name-input');
