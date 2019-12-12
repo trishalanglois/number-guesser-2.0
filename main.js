@@ -48,6 +48,7 @@ function updateNumber(number, numberDisplay) {
 }
 
 function checkGuesses(guess, guessMessage) {
+  checkInputs();
   if (guess.value < randomNumber) {
     guessMessage.innerText = 'In the words of Tal Bachman, go hiiiiiigggghhhhheeeayyyyayyyyy(er)'
   } else if (guess.value > randomNumber) {
@@ -57,6 +58,18 @@ function checkGuesses(guess, guessMessage) {
     showWinnerCard(nameInput1, nameInput2);
   }
 }
+
+function checkInputs() {
+  let inputs = document.querySelectorAll('.input-form-box');
+  let inputsError = document.querySelector('.error-msg-inputs')
+  inputs.forEach(input => {
+    console.log('wee woo wee woo');
+    if (input.value === '') {
+      inputsError.style.display = 'inline';
+    }
+  })
+}
+
 
 function showWinnerCard (name1, name2) {
   let aside = document.querySelector('#right-aside');
